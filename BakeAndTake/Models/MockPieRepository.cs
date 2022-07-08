@@ -13,10 +13,10 @@
                     Price = 15.95M, 
                     ShortDescription = "Lorem Ipsum",
                     Category = _categoryRepository.AllCategories.ToList()[0],
-                    ImageUrl="~/images/strawberry-pie.jpg", 
+                    ImageUrl="/images/strawberry-pie.jpg", 
                     InStock=true, 
                     IsPieOfTheWeek=false, 
-                    ImageThumbnail="~/images/strawberry-pie-small.jpg"
+                    ImageThumbnail="/images/strawberry-pie-small.jpg"
                 },
                 new Pie 
                 { 
@@ -25,10 +25,10 @@
                     Price = 18.95M, 
                     ShortDescription = "Lorem Ipsum",
                     Category = _categoryRepository.AllCategories.ToList()[1],
-                    ImageUrl="~/images/lemon-cheesecake.jpg",
+                    ImageUrl="/images/lemon-cheesecake.jpg",
                     InStock=true,
                     IsPieOfTheWeek=false,
-                    ImageThumbnail="~/images/lemon-cheesecake-small.jpg"
+                    ImageThumbnail="/images/lemon-cheesecake-small.jpg"
                 },
                 new Pie 
                 { 
@@ -37,10 +37,10 @@
                     Price = 15.95M, 
                     ShortDescription = "Lorem Ipsum",
                     Category = _categoryRepository.AllCategories.ToList()[0],
-                    ImageUrl="~/images/apple-pie.jpg", 
+                    ImageUrl="/images/apple-pie.jpg", 
                     InStock=true, 
                     IsPieOfTheWeek=false, 
-                    ImageThumbnail="~/images/apple-pie-small.jpg"
+                    ImageThumbnail="/images/apple-pie-small.jpg"
                 },
                 new Pie 
                 { 
@@ -49,10 +49,10 @@
                     Price = 12.95M, 
                     ShortDescription = "Lorem Ipsum",
                     Category = _categoryRepository.AllCategories.ToList()[2],
-                    ImageUrl="~/images/pumpkin-pie.jpg", 
+                    ImageUrl="/images/pumpkin-pie.jpg", 
                     InStock=true, 
                     IsPieOfTheWeek=true, 
-                    ImageThumbnail="~/images/pumpkin-pie-small.jpg"
+                    ImageThumbnail="/images/pumpkin-pie-small.jpg"
                 },
             };
 

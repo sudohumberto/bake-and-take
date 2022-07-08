@@ -6,11 +6,16 @@
 
 <h1>@Model!.CurrentCategory</h1>
 
-@foreach (var pie in Model!.Pies) 
-{
-    <div>
-        <h2>@pie.Name</h2>
-        <h3>@pie.Price.ToString("c")</h3>
-        <h4>@pie.Category.Name</h4>
-    </div>
-}
+<div class="row g-3 text-center justify-content-center">
+    @foreach (var pie in Model!.Pies) 
+    {
+        <div class="card m-3 border-0" style="width: 18rem;">
+            <img src="@pie.ImageThumbnail" class="card-img-top w-100" alt="@pie.Name" style="width: 100%; height:50%; object-fit:cover;">
+            <div class="card-body">
+                <h5 class="card-title">@pie.Name</h5>
+                <p class="card-text">@pie.Price.ToString("c")</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    }
+</div>

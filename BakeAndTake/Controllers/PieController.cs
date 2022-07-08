@@ -21,10 +21,10 @@ namespace BakeAndTake.Controllers
             //ViewBag.CurrentCategory = "Cheese Cakes";
 
             // Or a ViewModel
-            PiesListViewModel piesListViewModel = new() 
+            PiesListViewModel piesListViewModel = new()
             {
                 Pies = _pieRepository.AllPies,
-                CurrentCategory = "Cheese Cakes"
+                CurrentCategory = _categoryRepository.AllCategories.First()!.Name
             };
 
             return View(piesListViewModel);
