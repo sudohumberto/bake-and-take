@@ -6,21 +6,23 @@ namespace BakeAndTake.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPieRepository _pieRepository;
+        
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IPieRepository pieRepository)
         {
             _logger = logger;
+            _pieRepository = pieRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                PiesOfTheWeek = _pieRepository.PiesOfTheWeek
+            };
+            return View(homeViewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

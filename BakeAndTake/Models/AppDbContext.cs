@@ -130,7 +130,7 @@ namespace BakeAndTake.Models
                     CategoryId = 1,
                     ImageUrl = "/images/peach-pie.jpg",
                     InStock = false,
-                    IsPieOfTheWeek = false,
+                    IsPieOfTheWeek = true,
                     ImageThumbnail = "/images/peach-pie-small.jpg",
                     AllergyInformation = ""
                 }
@@ -162,7 +162,7 @@ namespace BakeAndTake.Models
                     CategoryId = 1,
                     ImageUrl = "/images/strawberry-pie.jpg",
                     InStock = true,
-                    IsPieOfTheWeek = false,
+                    IsPieOfTheWeek = true,
                     ImageThumbnail = "/images/strawberry-pie-small.jpg",
                     AllergyInformation = ""
                 }
