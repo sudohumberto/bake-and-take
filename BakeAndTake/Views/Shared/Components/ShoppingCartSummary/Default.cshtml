@@ -1,0 +1,11 @@
+﻿@model ShoppingCartViewModel
+
+@if (Model!.ShoppingCart!.ShoppingCartItems!.Count > 0) 
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark">
+            <i class="bi bi-cart4"></i>
+            <span class="badge bg-secondary">@Model.ShoppingCart.ShoppingCartItems.Count</span>
+        </a>
+    </li>
+}
