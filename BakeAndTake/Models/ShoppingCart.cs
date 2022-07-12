@@ -70,10 +70,10 @@ namespace BakeAndTake.Models
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ?? (ShoppingCartItems = _appDbContext.ShoppingCartItems
+            return ShoppingCartItems ??= _appDbContext.ShoppingCartItems
                 .Where(c => c.ShoppingCartId == ShoppingCartId)
                 .Include(s => s.Pie)
-                .ToList());
+                .ToList();
         }
 
         public void ClearCart()

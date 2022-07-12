@@ -18,6 +18,7 @@ namespace BakeAndTake.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Controller: Home, Action: Index");
             var homeViewModel = new HomeViewModel
             {
                 PiesOfTheWeek = _pieRepository.PiesOfTheWeek
@@ -28,6 +29,7 @@ namespace BakeAndTake.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            _logger.LogError("Error Captured by HomeController");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
