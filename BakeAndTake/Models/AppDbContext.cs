@@ -11,6 +11,7 @@ namespace BakeAndTake.Models
 
         public DbSet<Pie> Pies { get; set; } = null!;
         public DbSet<Category> Categories { get; set; } = null!;
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
