@@ -15,16 +15,30 @@ namespace BakeAndTake.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult List()
+        public ViewResult List(string category)
         {
+            IEnumerable<Pie> pies;
+            string currentCategory;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                pies = _pieRepository.AllPies.OrderBy(p => p.Id);
+                currentCategory = "All pies";
+            }
+            else
+            {
+                pies = _pieRepository.AllPies.Where(p => p.Category.Name == category).OrderBy(p => p.Id);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.Name == category)!.Name;
+            }
+
             // Use ViewBag
             //ViewBag.CurrentCategory = "Cheese Cakes";
 
             // Or a ViewModel
             PiesListViewModel piesListViewModel = new()
             {
-                Pies = _pieRepository.AllPies,
-                CurrentCategory = _categoryRepository.AllCategories.First()!.Name
+                Pies = pies,
+                CurrentCategory = currentCategory
             };
 
             return View(piesListViewModel);
