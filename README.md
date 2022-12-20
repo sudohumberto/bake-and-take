@@ -9,19 +9,19 @@ The application is based in the example of the course: Building Web Applications
 ## Screenshots
 
 ### Home
-![home](screencaptures\home.png)
+![home](screencaptures/home.png)
 
 ### Products
-![products](screencaptures\products.png)
+![products](screencaptures/products.png)
 
 ### Shoppingcart
-![shoppingcart](screencaptures\shoppingcart.png)
+![shoppingcart](screencaptures/shoppingcart.png)
 
 ### Login
-![login](screencaptures\login.png)
+![login](screencaptures/login.png)
 
 ### Register
-![register](screencaptures\register.png)
+![register](screencaptures/register.png)
 
 ### Checkout
-![checkout](screencaptures\checkout.png)
+![checkout](screencaptures/checkout.png)
