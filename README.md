@@ -4,7 +4,13 @@ Bake And Take is the name of a fictional cakes shop web site.
 
 It is implemented with NET CORE 6 (LTS) and MVC in a single project.
 
-The application is based in the example of the course: Building Web Applications with ASP.NET Core 3 and 5 MVC by Gill Cleeren.
+The application is based in the examples of the courses: 
+* ASP.NET Core 6 Fundamentals by Gill Cleeren.
+* Building Web Applications with ASP.NET Core 3 and 5 MVC by Gill Cleeren.
+
+## Requirements
+
+
 
 ## Screenshots
 
