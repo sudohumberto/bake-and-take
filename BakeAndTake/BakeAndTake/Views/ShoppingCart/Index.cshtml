@@ -1,0 +1,42 @@
+﻿@model ShoppingCartViewModel
+
+<div class="row text-center">
+    <h3>Shopping Cart</h3>
+</div>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Thumb</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var line in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <tr>
+                    <th scope="row">@Model.ShoppingCart.ShoppingCartItems.IndexOf(line)</th>
+                    <td>
+                        <img src="@line.Pie.ImageThumbnailUrl" class="img-fluid" width="30" alt="@line.Pie.Name"/>
+                    </td>
+                    <td>@line.Amount</td>
+                    <td>@line.Pie.Name</td>
+                    <td>@line.Pie.Price.ToString("c")</td>
+                </tr>    
+            }
+            <tr>
+                <th scope="row"></th>
+                <td colspan="3">
+                    <h4>Total</h4>
+                </td>
+                <td>
+                    <h4>@Model.ShoppingCartTotal.ToString("c")</h4>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

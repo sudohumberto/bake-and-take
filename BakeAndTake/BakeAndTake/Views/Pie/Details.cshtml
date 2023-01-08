@@ -10,6 +10,6 @@
         <h4>@Model.ShortDescription</h4>
         <p>@Model.LongDescription</p>
         <h3>@Model.Price.ToString("c")</h3>
-        <button type="button" class="btn btn-primary">Action</button>
+        <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-pieId="@Model.PieId">Add to cart</a>
     </div>
 </div>
