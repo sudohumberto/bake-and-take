@@ -18,6 +18,22 @@ Open `View`>`Other Windows`>`Package Manager Console` and run:
 update-database
 ```
 
+## How-to?
+
+1. Add or Remove a Migration.
+
+Update the model or attributes you need. Then, in the Package Manager Console run:
+
+```
+add-migration [MigrationName]
+```
+
+If something went wrong, you can always delete the last migration with. In the Package Manager Console run:
+
+```
+remove-migration
+```
+
 ## Screenshots
 
 ### Home
