@@ -12,7 +12,7 @@ builder.Services.AddScoped<IPieRepository, PieRepository>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BakeAndTakeDbContext>(options => {
-    options.UseSqlServer(builder.Configuration["BakeAndTakeDbContextConnection"]);
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:BakeAndTakeDbContextConnection"]);
 });
 
 var app = builder.Build();
