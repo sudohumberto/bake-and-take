@@ -1,12 +1,13 @@
 using BakeAndTake.Context;
 using BakeAndTake.Repositories.Abstract;
-using BakeAndTake.Repositories.Mocks;
+// using BakeAndTake.Repositories.Mocks;
+using BakeAndTake.Repositories.Implementation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPieRepository, PieRepository>();
 
 builder.Services.AddControllersWithViews();
 
