@@ -10,7 +10,13 @@ The application is based in the examples of the courses:
 
 ## Requirements
 
+1. Create or Update the database. 
 
+Open `View`>`Other Windows`>`Package Manager Console` and run:
+
+```
+update-database
+```
 
 ## Screenshots
 
