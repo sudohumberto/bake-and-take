@@ -11,11 +11,18 @@
             <div class="card" >
                 <img src="@pie.ImageUrl" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">@pie.Name</h5>
+                    
+                    <h5 class="card-title" style="height:3rem;">
+                        <a asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId" class="text-decoration-none text-reset">
+                            @pie.Name
+                        </a>
+                    </h5>
+                    
                     <p class="card-text">
                         @pie.Price.ToString("c") | @pie.Category.CategoryName
                     </p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a class="btn btn-link" asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId">info</a>
                 </div>
             </div>
         </div>

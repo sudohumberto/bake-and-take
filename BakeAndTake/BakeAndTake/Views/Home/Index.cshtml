@@ -1,0 +1,60 @@
+﻿@model HomeViewModel
+
+<div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/images/carousel/carousel1.jpg" class="d-block w-100" style="height:300px; object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/carousel/carousel2.jpg" class="d-block w-100" style="height:300px; object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/carousel/carousel3.jpg" class="d-block w-100" style="height:300px; object-fit:cover;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="row text-center my-3">
+    <h1>Pies of the week</h1>
+    <p>Enjoy a weekly selection of our favourite pies</p>
+</div>
+
+<div class="row text-center justify-content-center">
+    @foreach (var pie in Model.PiesOfTheWeek)
+    {
+        <div class="col-12 col-md-4 col-lg-3 m-3">
+            <div class="card">
+                <img src="@pie.ImageUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <h5 class="card-title" style="height:3rem;">
+                        <a asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId" class="text-decoration-none text-reset">
+                            @pie.Name
+                        </a>
+                    </h5>
+
+                    <p class="card-text">
+                        @pie.Price.ToString("c") | @pie.Category.CategoryName
+                    </p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a class="btn btn-link" asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId">info</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
