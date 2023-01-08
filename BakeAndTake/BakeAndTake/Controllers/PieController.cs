@@ -1,4 +1,5 @@
 ﻿using BakeAndTake.Repositories.Abstract;
+using BakeAndTake.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BakeAndTake.Controllers
@@ -16,8 +17,8 @@ namespace BakeAndTake.Controllers
 
         public IActionResult List()
         {
-            ViewBag.CurrentCategory = "Cheese cakes";
-            return View(_pieRepository.AllPies);
+            PieListViewModel piesListViewModel = new(_pieRepository.AllPies, "Cheese cakes");
+            return View(piesListViewModel);
         }
     }
 }
