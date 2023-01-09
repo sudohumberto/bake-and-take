@@ -33,5 +33,10 @@ namespace BakeAndTake.Repositories.Implementation
         {
             return _bakeAndTakeDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
+
+        public IEnumerable<Pie> SearchPies(string searchQuery)
+        {
+            return _bakeAndTakeDbContext.Pies.Where(p => p.Name.Contains(searchQuery));
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BakeAndTake.Models;
+﻿using BakeAndTake.Context;
+using BakeAndTake.Models;
 using BakeAndTake.Repositories.Abstract;
 
 namespace BakeAndTake.Repositories.Mocks
@@ -74,7 +75,7 @@ namespace BakeAndTake.Repositories.Mocks
 
         public IEnumerable<Pie> SearchPies(string searchQuery)
         {
-            throw new NotImplementedException();
+            return AllPies.Where(p => p.Name.Contains(searchQuery));
         }
     }
 }

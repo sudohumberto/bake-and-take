@@ -4,6 +4,7 @@ using BakeAndTake.Repositories.Abstract;
 // using BakeAndTake.Repositories.Mocks;
 using BakeAndTake.Repositories.Implementation;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,11 +16,16 @@ builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(options => 
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 builder.Services.AddDbContext<BakeAndTakeDbContext>(options => {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:BakeAndTakeDbContextConnection"]);
 });
+
+//builder.Services.AddControllers(); // API
 
 var app = builder.Build();
 
@@ -40,6 +46,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 */
+
+// app.MapControllers(); // API
 
 DbInitializer.Seed(app);
 
