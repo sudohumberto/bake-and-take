@@ -43,6 +43,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseAuthentication();
+app.UseAuthorization();
 
 //app.MapDefaultControllerRoute();
 
