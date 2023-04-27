@@ -1,0 +1,15 @@
+﻿@model HomeViewModel
+
+<partial name="_Carousel" />
+
+<div class="row text-center my-3">
+    <h1>Pies of the week</h1>
+    <p>Enjoy a weekly selection of our favourite pies</p>
+</div>
+
+<div class="row text-center justify-content-center">
+    @foreach (var pie in Model.PiesOfTheWeek)
+    {
+        <partial name="_PieCard" model="pie" />
+    }
+</div>
